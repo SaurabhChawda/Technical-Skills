@@ -4,7 +4,8 @@ import "./styles.css";
 const SkillsDB = {
   Developement: [
     { name: "Front-End Developement", rating: "4/5" },
-    { name: "Back-End Developement", rating: "4/5" }
+    { name: "Back-End Developement", rating: "4/5" },
+    { name: "Software Developement", rating: "4/5" }
   ],
   DigitalMarketing: [
     { name: "SEO", rating: "4/5" },
@@ -17,7 +18,8 @@ const SkillsDB = {
     { name: "Poster Designing", rating: "5/5" }
   ]
 };
-
+var skillslist = Object.keys(SkillsDB);
+console.log(skillslist);
 export default function App() {
   const [A, setA] = useState("Developement");
   function genreClickHandler(genre) {
@@ -29,15 +31,14 @@ export default function App() {
       <p> </p>
 
       <div>
-        {Object.keys(SkillsDB).map((genre) => (
+        {skillslist.map((genre) => (
           <button onClick={() => genreClickHandler(genre)}>{genre}</button>
         ))}
       </div>
       <div>
         <ul>
           {SkillsDB[A].map((Skills) => (
-            <li key={Skills.name}>
-              {" "}
+            <li>
               <div style={{ fontSize: "larger" }}> {Skills.name} </div>
               <div style={{ fontSize: "smaller" }}> {Skills.rating} </div>
             </li>
