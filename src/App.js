@@ -22,6 +22,7 @@ var skillslist = Object.keys(SkillsDB);
 console.log(skillslist);
 export default function App() {
   const [A, setA] = useState("Developement");
+  console.log(A);
   function clickHandler(Skillsbutton) {
     setA(Skillsbutton);
   }
@@ -37,14 +38,12 @@ export default function App() {
         ))}
       </div>
       <div>
-        <ul>
-          {SkillsDB[A].map((Skills) => (
-            <li>
-              <div style={{ fontSize: "larger" }}> {Skills.name} </div>
-              <div style={{ fontSize: "smaller" }}> {Skills.rating} </div>
-            </li>
-          ))}
-        </ul>
+        {SkillsDB[A].map((Skills) => (
+          <li>
+            <div style={{ fontSize: "larger" }}> {Skills.name} </div>
+            <div style={{ fontSize: "smaller" }}> {Skills.rating} </div>
+          </li>
+        ))}
       </div>
     </div>
   );
