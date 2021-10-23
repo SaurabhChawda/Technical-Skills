@@ -22,17 +22,18 @@ var skillslist = Object.keys(SkillsDB);
 console.log(skillslist);
 export default function App() {
   const [A, setA] = useState("Developement");
-  function genreClickHandler(genre) {
-    setA(genre);
+  function clickHandler(Skillsbutton) {
+    setA(Skillsbutton);
   }
   return (
     <div className="App">
       <h1> Technical Skills </h1>
       <p> </p>
-
       <div>
-        {skillslist.map((genre) => (
-          <button onClick={() => genreClickHandler(genre)}>{genre}</button>
+        {skillslist.map((Skillsbutton) => (
+          <button onClick={() => clickHandler(Skillsbutton)}>
+            {Skillsbutton}
+          </button>
         ))}
       </div>
       <div>
